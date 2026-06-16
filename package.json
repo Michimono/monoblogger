@@ -1,0 +1,26 @@
+{
+  "name": "monoblogger",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A modern framework for blogger template development",
+  "scripts": {
+    "publish:all": "npm publish -w packages/core && npm publish -w packages/starter && npm publish -w packages/cli && npm publish -w packages/create-monoblogger"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michimono/monoblogger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Michimono/monoblogger/issues"
+  },
+  "homepage": "https://github.com/Michimono/monoblogger#readme",
+  "workspaces": [
+    "packages/core",
+    "packages/cli",
+    "packages/starter",
+    "packages/create-monoblogger"
+  ]
+}

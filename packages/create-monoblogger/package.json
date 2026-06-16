@@ -1,0 +1,32 @@
+{
+  "name": "create-monoblogger",
+  "version": "0.0.1",
+  "description": "Scaffold a new monoblogger project with `npm create monoblogger`",
+  "type": "module",
+  "bin": {
+    "create-monoblogger": "index.mjs"
+  },
+  "files": [
+    "index.mjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michimono/monoblogger.git",
+    "directory": "packages/create-monoblogger"
+  },
+  "keywords": [
+    "blogger",
+    "blogspot",
+    "template",
+    "create",
+    "scaffold"
+  ],
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@monoblogger/cli": "^0.0.1"
+  }
+}

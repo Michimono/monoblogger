@@ -1,0 +1,30 @@
+{
+  "name": "@monoblogger/core",
+  "version": "0.0.1",
+  "description": "Core build pipeline and built-in plugins for the monoblogger framework",
+  "type": "module",
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs",
+    "./plugins/*": "./src/plugins/*.mjs"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michimono/monoblogger.git",
+    "directory": "packages/core"
+  },
+  "keywords": [
+    "blogger",
+    "blogspot",
+    "template",
+    "static-site"
+  ],
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
