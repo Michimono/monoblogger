@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+body {
+    font-family: 'Switzer', system-ui, sans-serif;
+}
+
+/* Post Body Styles */
+
+  #post-body img {
+    @apply mb-10 aspect-[3/2] w-full rounded-2xl object-cover shadow-xl;
+  }
+
+  #post-body p {
+    @apply my-10 text-base/8 first:mt-0 last:mb-0;
+  }
+
+  #post-body ul {
+    @apply list-disc pl-4 text-base/8 marker:text-gray-400;
+  }
+
+  #post-body li {
+    @apply my-2 pl-2 has-[br]:mb-8;
+  }
+
+    #post-body blockquote {
+    @apply my-10 border-l-2 border-gray-200 pl-6 text-gray-600 font-medium tracking-[-0.01em] leading-8 bg-gray-50 py-2;
+  }
+
+  #post-body ol {
+    @apply list-decimal pl-4 text-base/8 marker:text-gray-400;
+  }
+
+  #post-body h2 {
+    @apply mt-16 mb-6 scroll-mt-24 text-3xl font-semibold tracking-[-0.01em] leading-9;
+  }
+
+  #post-body b {
+    @apply font-semibold text-gray-950;
+  }
+
+/* Post comment styles */
+
+.comments .comment-block {
+background: #F9F9F9;
+color: #555;
+box-shadow: 0 4px 10px #EEEEEE;
+position: relative;
+margin-top: 10px;
+margin-left: 60px;
+padding: 10px;
+border: 4px solid #EEEEEE !important;
+border-radius:10px;
+font: 1.190em/1.2 Cambria,Georgia,sans-serif;
+}
+.comment-thread li .comment-block:before {
+position: absolute;
+display: block;
+left: -26px;
+color: #EEEEEE;
+content: "\25C4";
+font-size: 30px;
+}
+.comments .avatar-image-container {
+width: 60px;
+height: 60px;
+max-height: 60px;
+margin:0px 0px 0 -28px;
+padding: 0px;
+border: 7px solid #EEEEEE;
+border-radius:60px;
+}
+.comments .avatar-image-container img {
+overflow:hidden;
+width: 60px;
+height: 60px;
+max-width: 60px;
+border:0 !important;
+border-radius:60px;
+}
+.comments .comment-thread.inline-thread {
+background: none;
+}
+.comments .continue {
+border-top: 0px solid transparent;
+}
+.comments .comments-content .datetime {
+float: right;
+font-size: 11px;
+}
+.comments .comments-content .user a{
+font-size: 15px;
+color: #498EC9;
+}
+.comments .comments-content .datetime a:hover{
+color: #777;
+text-decoration: none;
+}
+.comments .comments-content .comment:first-child {
+padding-top: 0px;
+}
+.comments .comments-content .comment {
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
+.comments .continue a {
+padding: 0px;
+}
+.comments .comments-content .icon.blog-author {
+background-image: none;
+}

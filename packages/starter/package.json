@@ -1,0 +1,35 @@
+{
+  "name": "@monoblogger/starter",
+  "version": "0.0.1",
+  "description": "Starter template used by the monoblogger CLI to scaffold new projects",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "files": [
+    "src",
+    "build.mjs",
+    "_gitignore"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michimono/monoblogger.git",
+    "directory": "packages/starter"
+  },
+  "keywords": [
+    "blogger",
+    "blogspot",
+    "template",
+    "starter"
+  ],
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@monoblogger/core": "^0.0.1",
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}

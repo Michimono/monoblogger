@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+    b:css="false"
+    b:defaultwidgetversion="2"
+    b:layoutsVersion="3"
+    b:responsive="true"
+    expr:dir="data:blog.languageDirection"
+    expr:lang="data:blog.locale"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:b="http://www.google.com/2005/gml/b"
+    xmlns:data="http://www.google.com/2005/gml/data"
+    xmlns:expr="http://www.google.com/2005/gml/expr"
+    xmlns:mono="urn:monoblogger"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Blogger built-ins: favicon, RSS feed links, meta description set in the dashboard -->
+        <b:include data="blog" name="all-head-content" />
+
+        <link rel="stylesheet"
+            href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"></link>
+
+        <title>
+            <data:view.title.escaped />
+        </title>
+
+        <b:if cond="data:view.description">
+            <meta expr:content="data:view.description.escaped" name="description" />
+        </b:if>
+        <meta content="{{organization.name}}" name="author" />
+        <link expr:href="data:view.url.canonical" rel="canonical" />
+
+        <link rel="stylesheet" href="__TAILWIND__" />
+    </head>
+
+    <body class="flex min-h-screen flex-col bg-white text-gray-900">
+        <mono:include file="views/header.html" />
+        <mono:include file="views/landing.html" />
+        <mono:include file="views/footer.html" />
+    </body>
+
+</html>
