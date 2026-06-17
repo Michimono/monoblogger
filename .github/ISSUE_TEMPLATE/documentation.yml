@@ -8,14 +8,6 @@ body:
       value: |
         Thanks for helping improve the docs! Use this for anything from a typo to missing or confusing documentation.
 
-  - type: checkboxes
-    id: preflight
-    attributes:
-      label: Before you start
-      options:
-        - label: I searched existing issues and didn't find a duplicate.
-          required: true
-
   - type: dropdown
     id: location
     attributes:
@@ -30,39 +22,20 @@ body:
     validations:
       required: true
 
-  - type: dropdown
-    id: kind
-    attributes:
-      label: Type of change
-      options:
-        - Typo or formatting
-        - Incorrect or outdated information
-        - Missing documentation
-        - Clarification needed
-        - New guide or example
-    validations:
-      required: true
-
   - type: input
     id: link
     attributes:
-      label: Link or path
+      label: Link or path (optional)
       description: Link to the page/section, or the file path (e.g. README.md, packages/core/...).
       placeholder: "https://github.com/Michimono/monoblogger/blob/main/README.md#getting-started"
 
   - type: textarea
     id: problem
     attributes:
-      label: What's wrong or missing?
-      description: Describe the issue with the current documentation.
+      label: What's the suggested change?
+      description: Describe the issue with the current documentation and proposed wording, examples, or an outline are all welcome.
     validations:
       required: true
-
-  - type: textarea
-    id: suggestion
-    attributes:
-      label: Suggested change
-      description: How should it read instead? Proposed wording, examples, or an outline are all welcome.
 
   - type: checkboxes
     id: contribute

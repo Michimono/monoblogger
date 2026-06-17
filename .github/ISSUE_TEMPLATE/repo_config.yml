@@ -1,45 +1,12 @@
 name: Repo / config change
 description: Propose changes to project configuration, tooling, or automation
-title: "[Chore]: "
-labels: ["chore"]
+title: "[Config]: "
+labels: ["config"]
 body:
   - type: markdown
     attributes:
       value: |
-        Use this for changes to how the repo is built, tested, and maintained — not for app features or bugs.
-
-  - type: checkboxes
-    id: preflight
-    attributes:
-      label: Before you start
-      options:
-        - label: I searched existing issues and didn't find a duplicate.
-          required: true
-
-  - type: dropdown
-    id: area
-    attributes:
-      label: Area
-      description: What part of the project setup does this affect?
-      options:
-        - Issue / PR templates
-        - CI/CD (GitHub Actions, testing, automation)
-        - Build tooling / scripts
-        - Linting & formatting
-        - Dependencies
-        - Release / publishing (npm)
-        - Repository settings
-        - Other
-    validations:
-      required: true
-
-  - type: textarea
-    id: current
-    attributes:
-      label: Current behavior / setup
-      description: How does it work today? Link to the relevant file(s) or workflow if possible.
-    validations:
-      required: true
+        Use this for changes to how the repo is built, tested, and maintained but not for app features or bugs.
 
   - type: textarea
     id: proposal
@@ -50,17 +17,9 @@ body:
       required: true
 
   - type: textarea
-    id: motivation
-    attributes:
-      label: Motivation
-      description: Why is this worth doing? e.g. catches bugs earlier, faster CI, less manual release work.
-    validations:
-      required: true
-
-  - type: textarea
     id: context
     attributes:
-      label: Additional context
+      label: Additional context (optional)
       description: Links, references to how other projects do it, or anything else relevant.
 
   - type: checkboxes
