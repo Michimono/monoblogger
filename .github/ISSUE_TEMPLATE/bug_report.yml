@@ -1,0 +1,93 @@
+name: Bug report
+description: Report something that isn't working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report! Please fill out the sections below so we can reproduce and fix the issue quickly.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before you start
+      options:
+        - label: I searched existing issues and didn't find a duplicate.
+          required: true
+        - label: I'm using the latest published version of the affected package.
+          required: false
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Affected package
+      description: Which part of monoblogger is this about?
+      options:
+        - "@monoblogger/core"
+        - "@monoblogger/cli"
+        - "@monoblogger/starter"
+        - create-monoblogger
+        - "Not sure / multiple"
+    validations:
+      required: true
+
+  - type: input
+    id: package-version
+    attributes:
+      label: Package version
+      description: e.g. 0.0.1 (check the relevant package.json or `npm ls`).
+      placeholder: "0.0.1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, including what you expected to happen instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps so we can reproduce it.
+      placeholder: |
+        1. Run `npm create monoblogger my-blog`
+        2. `cd my-blog && npm install`
+        3. `npm run build`
+        4. See error ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Build output / error logs
+      description: Paste the relevant terminal output. This will be rendered as code, so no backticks needed.
+      render: shell
+
+  - type: textarea
+    id: blogger
+    attributes:
+      label: Blogger upload error (if applicable)
+      description: If the issue happens when uploading the generated `dist/index.xml` to Blogger, paste the error message here.
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js version
+      description: Output of `node --version`.
+      placeholder: "v20.11.0"
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Windows 11 / macOS 14 / Ubuntu 24.04"
+    validations:
+      required: true
