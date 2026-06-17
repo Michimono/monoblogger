@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: Ask a question
-    url: https://github.com/Michimono/monoblogger/discussions/categories/q-a
+    url: https://github.com/Michimono/monoblogger/discussions/categories/questions
     about: Have a question about using monoblogger? Please ask in Discussions instead of opening an issue.
-  - name: Ideas & general discussion
-    url: https://github.com/Michimono/monoblogger/discussions
-    about: Share templates, show off your blog, or discuss ideas before opening a feature request.
-  - name: Contributing guide
-    url: https://github.com/Michimono/monoblogger/blob/main/CONTRIBUTING.md
-    about: Read how to set up the monorepo and develop locally.
+  - name: General discussion
+    url: https://github.com/Michimono/monoblogger/discussions/categories/general
+    about: Share templates, show off your blog, or discuss anything related with monoblogger.
+  - name: Propose new ideas
+    url: https://github.com/Michimono/monoblogger/discussions/categories/ideas
+    about: Share your ideas before opening a feature request.
