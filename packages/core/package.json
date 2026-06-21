@@ -1,6 +1,6 @@
 {
   "name": "@monoblogger/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Core build pipeline and built-in plugins for the monoblogger framework",
   "type": "module",
   "main": "src/index.mjs",
