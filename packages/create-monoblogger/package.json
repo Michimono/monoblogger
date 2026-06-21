@@ -1,6 +1,6 @@
 {
   "name": "create-monoblogger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Scaffold a new monoblogger project with `npm create monoblogger`",
   "type": "module",
   "bin": {
@@ -27,6 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@monoblogger/cli": "^0.0.2"
+    "@monoblogger/cli": "^0.0.3"
   }
 }

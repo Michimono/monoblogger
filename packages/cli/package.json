@@ -1,6 +1,6 @@
 {
   "name": "@monoblogger/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Command-line tool for scaffolding and managing monoblogger projects",
   "type": "module",
   "main": "index.mjs",
@@ -32,6 +32,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@monoblogger/starter": "^0.0.2"
+    "@monoblogger/starter": "^0.0.3"
   }
 }
