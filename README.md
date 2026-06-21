@@ -16,6 +16,8 @@ npm run build
 
 The build outputs `dist/index.xml`, ready to upload as a custom Blogger template.
 
+See the [wiki](https://github.com/Michimono/monoblogger/wiki) for detailed documentation on configuration, views, and deployment.
+
 ## Packages
 
 | Package | Purpose |
