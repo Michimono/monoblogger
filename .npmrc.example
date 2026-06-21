@@ -1,0 +1,8 @@
+# Copy to .npmrc and paste your npm access token after the equals sign.
+# .npmrc is gitignored — do not commit tokens.
+#
+# Create a token: https://www.npmjs.com/settings/~your-user/tokens
+# Use type "Granular Access Token" or "Classic" with Publish permission.
+
+@monoblogger:registry=https://registry.npmjs.org/
+//registry.npmjs.org/:_authToken=YOUR_NPM_TOKEN_HERE
