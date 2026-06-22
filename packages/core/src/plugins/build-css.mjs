@@ -1,7 +1,14 @@
-import { execSync } from "child_process";
+import { execSync } from "node:child_process";
 
-export default function buildCss(input, output) {
-    execSync(`npx tailwindcss -i ${input} -o ${output} --minify`, {
-        stdio: "inherit",
-    });
+/**
+ * Compiles a Tailwind entry stylesheet to a CSS file.
+ *
+ * @param {{ input: string, output: string }} options
+ */
+export default function buildCss({ input, output } = {}) {
+    return async function buildCss() {
+        execSync(`npx tailwindcss -i "${input}" -o "${output}" --minify`, {
+            stdio: "inherit",
+        });
+    };
 }

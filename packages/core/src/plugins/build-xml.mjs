@@ -1,8 +1,17 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 const XML_DECLARATION = '<?xml version="1.0" encoding="UTF-8"?>\n';
 
+// View tags look like `<m-NAME>` where NAME is a dot-separated path resolved
+// against the views directory:
+//   <m-footer />            -> views/footer.html
+//   <m-layouts.footer />    -> views/layouts/footer.html
+//   <m-footer></m-footer>   -> same as self-closing; inner content is discarded
+//
+// A fresh RegExp is returned on every call because the resolver recurses, and
+// reusing a single global regex across nested String.replace() calls corrupts
+// its lastIndex.
 function viewTagPattern() {
     return /<m-([\w.-]+)(?:\s[^>]*?)?\s*(?:\/>|>[\s\S]*?<\/m-\1\s*>)/g;
 }
@@ -34,17 +43,26 @@ function expandViews(html, viewsDir, stack = []) {
     });
 }
 
-export default function buildXml(src, dist) {
-    const viewsDir = path.join(path.dirname(src), "views");
+/**
+ * Assembles the entry HTML (resolving `<m-*>` view tags) into a single XML
+ * file. Views resolve against `views` (defaults to a `views/` folder next to
+ * the entry file).
+ *
+ * @param {{ input: string, output: string, views?: string }} options
+ */
+export default function buildXml({ input, output, views } = {}) {
+    return async function buildXml() {
+        const viewsDir = views ?? path.join(path.dirname(input), "views");
 
-    let xml = fs.readFileSync(src, "utf8");
-    xml = expandViews(xml, viewsDir);
+        let xml = fs.readFileSync(input, "utf8");
+        xml = expandViews(xml, viewsDir);
 
-    xml = xml.trimStart();
-    if (!xml.startsWith("<?xml")) {
-        xml = XML_DECLARATION + xml;
-    }
+        xml = xml.trimStart();
+        if (!xml.startsWith("<?xml")) {
+            xml = XML_DECLARATION + xml;
+        }
 
-    fs.mkdirSync(path.dirname(dist), { recursive: true });
-    fs.writeFileSync(dist, xml);
+        fs.mkdirSync(path.dirname(output), { recursive: true });
+        fs.writeFileSync(output, xml);
+    };
 }
