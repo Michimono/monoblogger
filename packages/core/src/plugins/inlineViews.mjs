@@ -38,7 +38,7 @@ function expandViews(html, viewsDir, stack = []) {
  * @param {{ input: string }} options
  */
 export default function inlineViews({ input }) {
-    return async () => {
+    return async function inlineViews() {
         const views = path.join(process.cwd(), "src", "views");
 
         let content = fs.readFileSync(input, "utf8");

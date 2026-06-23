@@ -2,13 +2,12 @@ import fs from "node:fs";
 
 /**
  * Inlines one or more stylesheets into the template by appending a <b:skin>
- * block just before </head>. Styles from multiple files are concatenated in
- * order. Source stylesheet files are removed after inlining.
+ * block just before </head>. Source stylesheet files are removed after inlining.
  *
  * @param {{ stylesheet: string | string[], output: string }} options
  */
 export default function inlineStylesheet({ stylesheet, output }) {
-    return async () => {
+    return async function inlineStylesheet() {
         const sources = Array.isArray(stylesheet) ? stylesheet : [stylesheet];
 
         if (sources.length === 0) {

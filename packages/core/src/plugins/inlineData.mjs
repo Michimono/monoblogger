@@ -7,7 +7,7 @@ import path from "node:path";
  * @param {{ input: string }} options
  */
 export default function inlineData({ input }) {
-    return async () => {
+    return async function inlineData() {
         const dataPath = path.join(process.cwd(), "src", "data.json");
         const data = JSON.parse(fs.readFileSync(dataPath, "utf8"));
         let content = fs.readFileSync(input, "utf8");
