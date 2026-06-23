@@ -1,8 +1,16 @@
-import { build, buildXml, buildCss, inlineVars, inlineCss } from "@monoblogger/core";
+import {
+    build,
+    createXml,
+    appendInput,
+    inlineViews,
+    compileTailwind,
+    inlineStylesheet,
+} from "@monoblogger/core";
 
 await build([
-    buildXml({ input: "src/index.html", output: "dist/index.xml" }),
-    buildCss({ input: "src/input.css", output: "dist/output.css" }),
-    inlineVars({ file: "dist/index.xml", data: "src/data.json" }),
-    inlineCss({ file: "dist/index.xml", css: "dist/output.css" }),
+    createXml({ output: "dist/index.xml" }),
+    appendInput({ input: "src/index.html", output: "dist/index.xml" }),
+    compileTailwind({ input: "src/input.css", output: "dist/output.css" }),
+    inlineStylesheet({ stylesheet: "dist/output.css", output: "dist/index.xml" }),
+    inlineViews({ input: "dist/index.xml" }),
 ]);
