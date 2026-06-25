@@ -1,7 +1,5 @@
-import fs from "fs";
-import path from "path";
-
-const XML_DECLARATION = '<?xml version="1.0" encoding="UTF-8"?>\n';
+import fs from "node:fs";
+import path from "node:path";
 
 function viewTagPattern() {
     return /<m-([\w.-]+)(?:\s[^>]*?)?\s*(?:\/>|>[\s\S]*?<\/m-\1\s*>)/g;
@@ -18,7 +16,7 @@ function expandViews(html, viewsDir, stack = []) {
 
         if (!fs.existsSync(filePath)) {
             throw new Error(
-                `build-xml: could not resolve <m-${name} /> (looked for ${path.relative(process.cwd(), filePath)})`
+                `inlineViews: could not resolve <m-${name} /> (looked for ${path.relative(process.cwd(), filePath)})`
             );
         }
 
@@ -26,7 +24,7 @@ function expandViews(html, viewsDir, stack = []) {
             const cycle = [...stack, filePath]
                 .map((f) => path.basename(f))
                 .join(" -> ");
-            throw new Error(`build-xml: circular view include detected: ${cycle}`);
+            throw new Error(`inlineViews: circular view include detected: ${cycle}`);
         }
 
         const content = fs.readFileSync(filePath, "utf8");
@@ -34,17 +32,18 @@ function expandViews(html, viewsDir, stack = []) {
     });
 }
 
-export default function buildXml(src, dist) {
-    const viewsDir = path.join(path.dirname(src), "views");
+/**
+ * Replaces `<m-*>` view tags with HTML partials from `src/views/`.
+ *
+ * @param {{ input: string }} options
+ */
+export default function inlineViews({ input }) {
+    return async function inlineViews() {
+        const views = path.join(process.cwd(), "src", "views");
 
-    let xml = fs.readFileSync(src, "utf8");
-    xml = expandViews(xml, viewsDir);
+        let content = fs.readFileSync(input, "utf8");
+        content = expandViews(content, views);
 
-    xml = xml.trimStart();
-    if (!xml.startsWith("<?xml")) {
-        xml = XML_DECLARATION + xml;
-    }
-
-    fs.mkdirSync(path.dirname(dist), { recursive: true });
-    fs.writeFileSync(dist, xml);
+        fs.writeFileSync(input, content);
+    };
 }
