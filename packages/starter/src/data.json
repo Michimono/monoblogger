@@ -1,6 +1,8 @@
 {
-    "organization": {
-        "name": "Michimono",
-        "url": "https://github.com/Michimono/monoblogger"
+    "site": {
+        "name": "monoblogger",
+        "author": "Michimono",
+        "repositoryUrl": "https://github.com/Michimono/monoblogger",
+        "wikiUrl": "https://github.com/Michimono/monoblogger/wiki"
     }
 }
