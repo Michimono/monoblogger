@@ -1,41 +1,34 @@
 <!DOCTYPE html>
-<html
-    b:css="false"
-    b:defaultwidgetversion="2"
-    b:layoutsVersion="3"
-    b:responsive="true"
-    expr:dir="data:blog.languageDirection"
-    expr:lang="data:blog.locale"
-    xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:b="http://www.google.com/2005/gml/b"
-    xmlns:data="http://www.google.com/2005/gml/data"
-    xmlns:expr="http://www.google.com/2005/gml/expr"
->
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html b:css="false" b:defaultwidgetversion="2" b:layoutsVersion="3" b:responsive="true"
+    expr:dir="data:blog.languageDirection" expr:lang="data:blog.locale" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data"
+    xmlns:expr="http://www.google.com/2005/gml/expr">
 
-        <!-- Blogger built-ins: favicon, RSS feed links, meta description set in the dashboard -->
-        <b:include data="blog" name="all-head-content" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet"
-            href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"></link>
+    <!-- Blogger built-ins: favicon, RSS feed links, meta description set in the dashboard -->
+    <b:include data="blog" name="all-head-content" />
 
-        <title>
-            <data:view.title.escaped />
-        </title>
+    <link rel="stylesheet" href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap">
+    </link>
 
-        <b:if cond="data:view.description">
-            <meta expr:content="data:view.description.escaped" name="description" />
-        </b:if>
-        <meta content="{{organization.name}}" name="author" />
-        <link expr:href="data:view.url.canonical" rel="canonical" />
-    </head>
+    <title>
+        <data:view.title.escaped />
+    </title>
 
-    <body class="flex min-h-screen flex-col bg-white text-gray-900">
-        <m-header />
-        <m-landing />
-        <m-footer />
-    </body>
+    <b:if cond="data:view.description">
+        <meta expr:content="data:view.description.escaped" name="description" />
+    </b:if>
+    <meta content="{{site.author}}" name="author" />
+    <link expr:href="data:view.url.canonical" rel="canonical" />
+</head>
+
+<body class="flex min-h-screen flex-col bg-white text-gray-900">
+    <m-header />
+    <m-landing />
+    <m-footer />
+</body>
 
 </html>

@@ -3,6 +3,7 @@ import {
     createXml,
     appendInput,
     inlineViews,
+    inlineData,
     compileTailwind,
     inlineStylesheet,
 } from "@monoblogger/core";
@@ -13,4 +14,5 @@ await build([
     compileTailwind({ input: "src/input.css", output: "dist/output.css" }),
     inlineStylesheet({ stylesheet: "dist/output.css", output: "dist/index.xml" }),
     inlineViews({ input: "dist/index.xml" }),
+    inlineData({ input: "dist/index.xml" }),
 ]);
